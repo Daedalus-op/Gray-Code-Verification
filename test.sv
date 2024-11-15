@@ -1,34 +1,31 @@
 module tb_gray_counter;
     logic clk;
     logic rstn;
-    logic [3:0] out;
+  logic [2:0] gray_out;
 
-    // Instantiate the gray counter
+    // Instantiate the Gray code counter
     gray_counter uut (
         .clk(clk),
         .rstn(rstn),
-        .out(out)
+        .gray_out(gray_out)
     );
 
-    // Generate clock signal
+    // Clock generation
     initial begin
         clk = 0;
-        forever #10 clk = ~clk; // 50 MHz clock
+        forever #10 clk = ~clk; // Toggle clock every 10 time units
     end
 
-    // Test sequence
     initial begin
-        // Initialize reset
-        rstn = 0; 
-        #15; // Wait for a few clock cycles
-        rstn = 1; // Release reset
-
-        // Monitor output changes
-        $monitor("Time=%0t | rstn=%b | Gray Code Output=0x%0h", $time, rstn, out);
-
-        // Run for several cycles to observe Gray code counting
-        repeat(16) @(posedge clk); // Run for 16 clock cycles
-
-        $finish; // End simulation
+        rstn = 0; // Assert reset
+        #15;
+        rstn = 1; // Deassert reset
+        
+        // Monitor output
+        $monitor("Time: %0t, Gray Code Output: %b", $time, gray_out);
+        
+        // Run for some time and then finish simulation
+        #200;
+        $finish;
     end
 endmodule
