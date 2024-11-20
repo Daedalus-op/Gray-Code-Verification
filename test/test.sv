@@ -1,4 +1,4 @@
-module tb_gray_counter;
+program tb_gray_counter;
     logic clk;
     logic rstn;
   logic [2:0] gray_out;
@@ -28,4 +28,4 @@ module tb_gray_counter;
         #200;
         $finish;
     end
-endmodule
+endprogram
