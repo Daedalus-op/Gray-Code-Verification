@@ -1,5 +1,5 @@
-`include "interface.sv"
-`include "test"
+`include "ref_interface.sv"
+//`include "ref_test.sv"
 module tbench_top;
   
   intf i_intf();

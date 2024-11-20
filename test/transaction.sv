@@ -1,4 +1,4 @@
-class transaction;
+class m_transaction;
     rand int reset_duration;  // Duration to hold the reset signal, in clock cycles
 
     // Constraint to limit reset duration to a reasonable range

@@ -1,8 +1,8 @@
-`include "transaction.sv"
-`include "generator.sv"
-`include "driver.sv"
-`include "monitor"
-`include "scoreboard"
+`include "ref_transaction.sv"
+`include "ref_generator.sv"
+`include "ref_driver.sv"
+`include "ref_monitor.sv"
+`include "ref_scoreboard.sv"
 
 class environment;
   generator 	gen;

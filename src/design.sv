@@ -5,8 +5,8 @@ module gray_counter (
 );
     logic [3:0] count;
 
-    always_ff @(posedge clk or negedge rstn) begin
-        if (!rstn) begin
+    always_ff @(posedge clk or posedge rstn) begin
+        if (rstn) begin
             count <= 4'b0000;
         end else begin
             count <= count + 1;
