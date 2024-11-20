@@ -1,10 +1,10 @@
 class driver;
   
-  virtual intf vif;
+  virtual ref_intf vif;
   
   mailbox gen2driv;
   
-  function new(virtual intf vif,mailbox gen2driv); 
+  function new(virtual ref_intf vif,mailbox gen2driv); 
     this.vif = vif;
     this.gen2driv = gen2driv;
   endfunction

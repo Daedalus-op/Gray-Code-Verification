@@ -2,9 +2,9 @@
 //`include "ref_test.sv"
 module tbench_top;
   
-  intf i_intf();
+  ref_intf i_intf();
   
-  test t1(i_intf);
+  ref_test t1(i_intf);
   
   half_adder h1 (
     .a(i_intf.a),

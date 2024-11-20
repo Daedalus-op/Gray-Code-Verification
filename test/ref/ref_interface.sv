@@ -1,4 +1,4 @@
-interface intf();
+interface ref_intf();
   
   logic a;
   logic b;

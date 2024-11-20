@@ -1,6 +1,6 @@
 `include "ref_environment.sv"
 
-program test(intf i_intf);
+program ref_test(ref_intf i_intf);
   environment env;
   
   initial 

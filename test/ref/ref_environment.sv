@@ -12,8 +12,8 @@ class environment;
   mailbox m1;
   mailbox m2;
 
-  virtual intf vif;
-  function new(virtual intf vif);
+  virtual ref_intf vif;
+  function new(virtual ref_intf vif);
     this.vif = vif;
     m1   = new();
     m2   = new();
