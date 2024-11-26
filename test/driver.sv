@@ -20,7 +20,6 @@ class driver;
 		vif.rst     <= trans.rst;
 		vif.clk     <= trans.clk;
 
-
 		trans.count	= vif.count;
 		trans.out	= vif.out;      
 		trans.display("Driver");

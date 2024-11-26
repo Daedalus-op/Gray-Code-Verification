@@ -9,8 +9,8 @@ class environment;
   driver    	driv;
   monitor   	mon;
   scoreboard	scb;
-  mailbox m1;
-  mailbox m2;
+  mailbox 		m1;
+  mailbox 		m2;
 
   virtual intf vif;
   function new(virtual intf vif);

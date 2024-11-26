@@ -2,12 +2,15 @@
 
 # Checklist
 - [x] design
+- [x] top
+- [x] generator
+- [x] driver
 - [x] environment
-- [ ] generator
 - [ ] transaction (Not sure)
-- [ ] driver
 - [x] interface
 - [x] test
 - [x] monitor
 - [x] scoreboard
-- [x] top
+
+>[!Note] Current Issues
+> - Don't know how to use the random time delays in the program

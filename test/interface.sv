@@ -2,7 +2,7 @@ interface intf();
   
   logic rst;
   logic clk;
-  logic count;
-  logic out;
+  logic [2:0] count;
+  logic [2:0] out;
   
 endinterface
