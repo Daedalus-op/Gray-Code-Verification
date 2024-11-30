@@ -1,6 +1,6 @@
 `include "ref_interface.sv"
 //`include "ref_test.sv"
-module tbench_top;
+module ref_top;
   
   ref_intf i_intf();
   

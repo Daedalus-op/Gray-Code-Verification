@@ -1,4 +1,4 @@
-class scoreboard;
+class ref_scoreboard;
   
   mailbox mon2scb;
   
@@ -9,7 +9,7 @@ class scoreboard;
   endfunction
   
   task main;
-    transaction trans;
+    ref_transaction trans;
     repeat(1)
       begin
       mon2scb.get(trans);

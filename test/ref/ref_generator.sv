@@ -1,6 +1,6 @@
-class generator;
+class ref_generator;
   
-  transaction trans; //Handle of Transaction class
+  ref_transaction trans; //Handle of Transaction class
   
   
   mailbox gen2driv;  //Mailbox declaration

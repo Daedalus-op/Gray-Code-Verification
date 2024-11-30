@@ -4,11 +4,11 @@
 `include "ref_monitor.sv"
 `include "ref_scoreboard.sv"
 
-class environment;
-  generator 	gen;
-  driver    	driv;
-  monitor   	mon;
-  scoreboard	scb;
+class ref_environment;
+  ref_generator 	gen;
+  ref_driver    	driv;
+  ref_monitor   	mon;
+  ref_scoreboard	scb;
   mailbox m1;
   mailbox m2;
 
@@ -34,7 +34,7 @@ class environment;
 
   
   task run;
-    test();
+    repeat(4) test();
     $finish;
   endtask
   

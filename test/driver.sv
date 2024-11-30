@@ -1,5 +1,5 @@
 class driver;
-  
+
 	virtual intf vif;
  
 	mailbox gen2driv;
@@ -17,12 +17,15 @@ class driver;
 
 		gen2driv.get(trans);
 
-		vif.rst     <= trans.rst;
 		vif.clk     <= trans.clk;
+		vif.rst     <= trans.rst;
 
 		trans.count	= vif.count;
 		trans.out	= vif.out;      
 		trans.display("Driver");
+
+		//#(trans.reset_duration);
+		//vif.rst     <= trans.rst;
 
 	end
 	endtask

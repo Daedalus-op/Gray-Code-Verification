@@ -1,4 +1,4 @@
-class transaction;
+class ref_transaction;
 
 // Stimulus are declared with rand keyword
  

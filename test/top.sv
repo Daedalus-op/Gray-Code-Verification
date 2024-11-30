@@ -8,7 +8,7 @@ module tbench_top_gray;
 
 	test t1(i_intf);
 
-	gray_counter c1 (i_intf);
+	gray_counter c1 (i_intf.out, i_intf.count, i_intf.clk, i_intf.rst);
 
 	initial begin
 		$dumpfile("dump.vcd"); $dumpvars;
@@ -19,6 +19,6 @@ endmodule
 module clock (
 	output bit clk
 	);
-	always clk = ~clk;
-	//initial #100 $finish;
+	always #1 clk = ~clk;
+	initial clk = 0;
 endmodule

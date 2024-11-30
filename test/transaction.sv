@@ -1,7 +1,7 @@
-class m_transaction;
+class transaction;
 	rand int reset_duration;	// Duration to release the reset signal
 
-	logic [2:0] out, count;
+	logic [3:0] out, count;
 	logic rst, clk;
 
 	// Constraint to limit reset duration to a reasonable range
@@ -18,7 +18,7 @@ class m_transaction;
 		$display(" %s ",name);
 		$display("-------------------------");
 		$display("reset_duration = %0d", reset_duration);
-		$display("count = %0b, out = %0d", count, out);
+		$display("count = %b, out = %b", count, out);
 		$display("-------------------------");
 	endfunction
 endclass

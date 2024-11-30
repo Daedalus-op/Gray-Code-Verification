@@ -1,4 +1,4 @@
-class driver;
+class ref_driver;
   
   virtual ref_intf vif;
   
@@ -13,7 +13,7 @@ class driver;
     
     repeat(1) 
       begin
-       transaction trans;
+        ref_transaction trans;
       
         gen2driv.get(trans);
        

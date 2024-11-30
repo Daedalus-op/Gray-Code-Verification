@@ -1,4 +1,4 @@
-class monitor;
+class ref_monitor;
   
   virtual ref_intf vif;
   mailbox mon2scb;
@@ -12,7 +12,7 @@ class monitor;
     repeat(1)
       #3;
       begin
-      transaction trans;
+      ref_transaction trans;
       trans = new();
       trans.a       = vif.a;
       trans.b       = vif.b;
