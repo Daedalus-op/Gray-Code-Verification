@@ -10,24 +10,26 @@ class driver;
 	endfunction
 
 	task main;
+		repeat(1) begin
+			transaction trans;
+			fork
+			begin
+				gen2driv.get(trans);
 
-	repeat(1) 
-	begin
-		transaction trans;
+				trans.count	= vif.count;
+				trans.out	= vif.out;      
+				trans.display("Driver");
+			end
 
-		gen2driv.get(trans);
-
-		vif.clk     <= trans.clk;
-		vif.rst     <= trans.rst;
-
-		trans.count	= vif.count;
-		trans.out	= vif.out;      
-		trans.display("Driver");
-
-		//#(trans.reset_duration);
-		//vif.rst     <= trans.rst;
-
-	end
+			begin
+				vif.rst     <= 0;
+				#(trans.reset_duration);
+				vif.rst     <= 1;
+				#1;
+				vif.rst     <= 0;
+				trans.display("Driver for rst");
+			end
+			join
+		end
 	endtask
-
 endclass

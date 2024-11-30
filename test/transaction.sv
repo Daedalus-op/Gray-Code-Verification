@@ -1,7 +1,7 @@
 class transaction;
 	rand int reset_duration;	// Duration to release the reset signal
 
-	logic [3:0] out, count;
+	logic [2:0] out, count;
 	logic rst, clk;
 
 	// Constraint to limit reset duration to a reasonable range

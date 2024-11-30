@@ -25,15 +25,15 @@ class environment;
 	
 	task gener();
 		fork 
-			$display("xxxxxxxx Generating xxxxxxxx");
+			$display("============= Generating =============");
 			gen.main();
+			driv.main();
 		join
 	endtask
 	
 	task test();
 		fork
-			$display("xxxxxxxxxx Testing xxxxxxxxxx");
-			driv.main();
+			$display("=============== Testing ===============");
 			mon.main();
 			scb.main();
 		join
@@ -43,7 +43,7 @@ class environment;
 	task run;
 		gener();
 		repeat(4) begin
-			#1;
+			#2;
 			test();
 		end
 		$finish;
