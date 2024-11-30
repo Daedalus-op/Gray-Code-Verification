@@ -1,20 +1,9 @@
-module gray_counter (
-	output logic [3:0] out,
-	output logic [3:0] count,
-	input logic clk,
-	input logic rst
-);
-	logic [3:0] cnt;
-
-	always_ff @(posedge clk or posedge rst) begin
-		if (rst) begin
-			cnt <= 4'b0000;
-		end else begin
-			cnt <= cnt + 1;
-		end
-	end
-
-	// Convert binary count to Gray code
-	assign out = {cnt[3], cnt[3:1] ^ cnt[2:0]};
-	assign count = cnt;
+`timescale 1ns/1ps
+module gray_counter(input clk, input rst, output reg [2:0] o_o, output [2:0] gray);
+    reg [2:0] count;
+    always @(posedge clk)
+    	bin_counter <= reset ? 3'b000 : bin_counter + 1;
+    	assign o_bin = bin_counter;
+    	assign o_gray_code = {bin_counter[2], bin_counter[2] ^ bin_counter[1], count[1] ^ count[0]};
 endmodule
+
