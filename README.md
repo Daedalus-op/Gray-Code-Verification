@@ -99,9 +99,6 @@ count = 010, out = 011
 </code>
 </details>
 
->[!Note] Current Issues
-> - Don't know how to use the random time delays in the program
-
 # Diagram
 ```
  [Reset Duration]                                                           
