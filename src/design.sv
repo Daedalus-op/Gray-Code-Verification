@@ -16,3 +16,11 @@ module gray_counter(
 	end
 endmodule
 
+    // Assign the binary counter to `o_o`
+    always @(posedge clk) begin
+        o_o <= bun;
+    end
+
+    // Gray code conversion
+    assign gray = {bun[2], bun[2] ^ bun[1], bun[1] ^ bun[0]};
+endmodule
