@@ -33,7 +33,7 @@ class environment;
 	
 	task test();
 		fork
-			$display("=============== Testing ===============");
+			$display("=============== Testing @ %0d ===============", $time);
 			mon.main();
 			scb.main();
 		join
