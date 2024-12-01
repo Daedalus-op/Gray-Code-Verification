@@ -5,7 +5,7 @@ class transaction;
 	logic rst, clk;
 
 	// Constraint to limit reset duration to a reasonable range
-	constraint reset_duration_c { reset_duration inside {[1:10]}; }
+	constraint reset_duration_c { reset_duration inside {[2:7]}; }
 
 	// Function to randomize the transaction values
 	function void randomize_transaction();
@@ -14,11 +14,9 @@ class transaction;
 	endfunction
 
 	function void display(string name);
-		$display("-------------------------");
-		$display(" %s ",name);
-		$display("-------------------------");
+		$display("\n %s -------------------",name);
 		$display("reset_duration = %0d", reset_duration);
-		$display("count = %b, out = %b", count, out);
+		$display("count = %0d, out = %b", count, out);
 		$display("-------------------------");
 	endfunction
 endclass

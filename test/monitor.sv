@@ -10,13 +10,12 @@ class monitor;
 	
 	task main;
 		repeat(1)
-			#3;
 			begin
 			transaction trans;
-			trans = new();
+			trans 			= new();
 			trans.rst		= vif.rst;
 			trans.clk		= vif.clk;
-			trans.count	= vif.count;
+			trans.count		= vif.count;
 			trans.out		= vif.out;
 			mon_scb.put(trans);
 			trans.display("Monitor");

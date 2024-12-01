@@ -24,29 +24,32 @@ class environment;
 	endfunction
 	
 	task gener();
-		fork 
-			$display("============= Generating =============");
-			gen.main();
-			driv.main();
-		join
+			$display("============= Generating @ %0d =============", $time);
+			fork
+				gen.main();
+				driv.main();
+			join
 	endtask
 	
 	task test();
-		fork
 			$display("=============== Testing @ %0d ===============", $time);
-			mon.main();
-			scb.main();
-		join
+			fork
+				mon.main();
+				scb.main();
+			join
 	endtask
 
 	
 	task run;
+		driv.reset;
 		gener();
-		repeat(4) begin
-			#2;
-			test();
-		end
-		$finish;
+		fork
+			repeat(7) begin
+				test();
+				#(2* vif.Tc);
+			end
+			driv.reset;
+		join
 	endtask
 	
 endclass

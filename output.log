@@ -1,0 +1,195 @@
+============= Driver for rst @ 2 ===============
+============= Generating @ 2 =============
+
+ Generator -------------------
+reset_duration = 4
+count = x, out = xxx
+-------------------------
+
+ Driver -------------------
+reset_duration = 4
+count = 0, out = 000
+-------------------------
+=============== Testing @ 2 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 0, out = 000
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 0, out = 000
+-------------------------
+=============== Testing @ 4 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 1, out = 001
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 1, out = 001
+-------------------------
+=============== Testing @ 6 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 2, out = 011
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 2, out = 011
+-------------------------
+=============== Testing @ 8 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 3, out = 010
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 3, out = 010
+-------------------------
+=============== Testing @ 10 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 4, out = 110
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 4, out = 110
+-------------------------
+============= Driver for rst @ 12 ===============
+=============== Testing @ 12 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 0, out = 000
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 0, out = 000
+-------------------------
+=============== Testing @ 14 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 1, out = 001
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 1, out = 001
+-------------------------
+============= Driver for rst @ 26 ===============
+============= Generating @ 26 =============
+
+ Generator -------------------
+reset_duration = 6
+count = x, out = xxx
+-------------------------
+
+ Driver -------------------
+reset_duration = 6
+count = 0, out = 000
+-------------------------
+=============== Testing @ 26 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 0, out = 000
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 0, out = 000
+-------------------------
+=============== Testing @ 28 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 1, out = 001
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 1, out = 001
+-------------------------
+=============== Testing @ 30 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 2, out = 011
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 2, out = 011
+-------------------------
+=============== Testing @ 32 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 3, out = 010
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 3, out = 010
+-------------------------
+=============== Testing @ 34 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 4, out = 110
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 4, out = 110
+-------------------------
+=============== Testing @ 36 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 5, out = 111
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 5, out = 111
+-------------------------
+=============== Testing @ 38 ===============
+
+ Monitor -------------------
+reset_duration = 0
+count = 6, out = 101
+-------------------------
+Result is correct
+
+ Scoreboard -------------------
+reset_duration = 0
+count = 6, out = 101
+-------------------------
+============= Driver for rst @ 40 ===============
+$finish called at time : 40 ns : File "/home/xubundadu/Desktop/Projects/Gray-Code-Verification/test/test.sv" Line 10

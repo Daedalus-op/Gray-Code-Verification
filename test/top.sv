@@ -4,7 +4,7 @@ module tbench_top_gray;
 
 	intf i_intf();
 
-	clock cl(.clk(i_intf.clk));
+	clock cl(.clk(i_intf.clk), .Tc(i_intf.Tc));
 
 	test t1(i_intf);
 
@@ -17,8 +17,9 @@ module tbench_top_gray;
 endmodule
 
 module clock (
-	output bit clk
+	output bit clk,
+	input int Tc
 	);
-	always #1 clk = ~clk;
+	always #(Tc) clk = ~clk;
 	initial clk = 0;
 endmodule
