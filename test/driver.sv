@@ -1,35 +1,28 @@
+// Driver
 class driver;
-
-	virtual intf vif;
- 
-	mailbox gen2driv;
-
-	function new(virtual intf vif,mailbox gen2driv); 
-		this.vif = vif;
-		this.gen2driv = gen2driv;
-	endfunction
-
-	task main;
-		repeat(1) begin
-			transaction trans;
-			fork
-			begin
-				gen2driv.get(trans);
-
-				trans.count	= vif.count;
-				trans.out	= vif.out;      
-				trans.display("Driver");
-			end
-
-			begin
-				vif.rst     <= 0;
-				#(trans.reset_duration);
-				vif.rst     <= 1;
-				#1;
-				vif.rst     <= 0;
-				trans.display("Driver for rst");
-			end
-			join
-		end
-	endtask
+    virtual gray_counter_if.DRV vif;
+    mailbox #(transaction) gen2drv;
+    event drv_done;
+    
+    function new(virtual gray_counter_if.DRV vif, mailbox #(transaction) gen2drv);
+        this.vif = vif;
+        this.gen2drv = gen2drv;
+    endfunction
+    
+    task reset_dut(input int duration);
+        vif.drv_cb.rst <= 1;
+        repeat(duration) @(posedge vif.clk);
+        vif.drv_cb.rst <= 0;
+    endtask
+    
+    task main();
+        transaction trans;
+        forever begin
+            gen2drv.get(trans);
+            reset_dut(trans.reset_duration);
+            trans.display("DRV");
+            -> drv_done;
+            @(posedge vif.clk);
+        end
+    endtask
 endclass

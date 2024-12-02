@@ -1,24 +1,30 @@
 `include "interface.sv"
-//`include "test.sv"
-module tbench_top_gray;
-
-	intf i_intf();
-
-	clock cl(.clk(i_intf.clk));
-
-	test t1(i_intf);
-
-	gray_counter c1 (i_intf.out, i_intf.count, i_intf.clk, i_intf.rst);
-
-	initial begin
-		$dumpfile("dump.vcd"); $dumpvars;
-	end
-
-endmodule
-
-module clock (
-	output bit clk
-	);
-	always #1 clk = ~clk;
-	initial clk = 0;
+`include "test.sv"
+// Top
+module tb_top;
+    bit clk;
+    
+    always #5 clk = ~clk;
+    
+    gray_counter_if vif(clk);
+    
+    gray_counter dut (
+        .clk(clk),
+        .rst(vif.rst),
+        .o_o(vif.count),
+        .gray(vif.gray)
+    );
+    
+    initial begin
+        test t1;
+        $timeformat(-9, 2, " ns");
+        t1 = new(vif);
+        t1.run();
+        #100 $finish;
+    end
+    
+    initial begin
+        $dumpfile("dump.vcd");
+        $dumpvars;
+    end
 endmodule
